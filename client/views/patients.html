@@ -1,0 +1,23 @@
+<div class="panel panel-primary" ng-init="getPatients()">
+  <div class="panel-heading">
+    <h3 class="panel-title">Detail Of Patients</h3>
+  </div>
+<div class="container">
+  <div class="panel-body">
+    <div class="row">
+    	<div ng-repeat="patient in patients">
+    		<div class="col-md-6">
+    			<div class="col-md-6" >
+    				<h4>{{patient.firstname}} {{patient.lastname}}</h4>
+    				<p>{{patient.information}}</p>
+    				<a class="btn btn-primary" href="#/patients/details/{{patient._id}}">View Details</a>
+    			</div>
+    			<div class="col-md-6" >
+            <img class="thumbnail" src="{{patient.image_url}}" style="background-color: maroon">
+          </div>
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>
+</div>

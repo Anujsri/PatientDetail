@@ -1,0 +1,26 @@
+<a href="#/patients"><span class="glyphicon glyphicon-backward"></span> Go Back</a>
+<div class="panel panel-primary" ng-init="getPatient()">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3" style="background-color: maroon">
+        <img src="{{patient.image_url}}">
+      </div>
+      <div class="col-md-8">
+        </p>{{patient.information}}</p>
+        <ul class="list-group">
+           <li class="list-group-item">Name: {{patient.firstname}} {{patient.lastname}}</li>
+          <li class="list-group-item">Gender: {{patient.gender}}</li>
+          <li class="list-group-item">MobileNo.: {{patient.phone}}</li>
+          <li class="list-group-item">Age: {{patient.age}}</li>
+          <li class="list-group-item">DOB: {{patient.dob}}</li>
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pull-right">
+  <a href="#/patients/edit/{{patient._id}}" class="btn btn-primary">Edit</a>
+   <a href="#" ng-click="removePatient(patient._id)" class="btn btn-danger">Delete</a>
+  </div>

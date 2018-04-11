@@ -1,0 +1,17 @@
+{
+  "name": "patientsdetail",
+  "version": "1.0.0",
+  "description": "Simple PatientsDetail app",
+  "main": "app.js",
+  "scripts": {
+    "start": "app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "mongoose": "^5.0.11"
+  },
+  "author": "Anuj Srivastava",
+  "license": "ISC"
+}
