@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 	res.send('Please use /api/patients');
 });
 
-
+ 
 
 app.get('/api/patients', (req, res) => {
 	Patient.getPatients((err, patients) => {
@@ -36,6 +36,8 @@ app.get('/api/patients/:_id', (req, res) => {
 		res.json(patient);
 	});
 });
+
+
 
 app.post('/api/patients', (req, res) => {
 	var patient = req.body;

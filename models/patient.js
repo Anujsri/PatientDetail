@@ -9,13 +9,18 @@ const patientSchema = mongoose.Schema({
 	information:{
 		type: String
 	},
+    	 	 
 	firstname:{
 		type: String,
 		required: true
 	},
+      	 	 
 	lastname:{
-		type: String
+		type: String,
+		required: true
 	},
+ 
+	 	 	 
 	phone:{
 		type: Number,
 		required: true
@@ -35,6 +40,10 @@ const patientSchema = mongoose.Schema({
 
 });
 
+patientSchema.virtual('name.full').get(function () {
+    return this.name.firstname + ' ' + this.name.lastname;
+});
+
 const Patient = module.exports = mongoose.model('Patient', patientSchema);
 
 // Get Patients
@@ -47,6 +56,8 @@ module.exports.getPatientById = (id, callback) => {
 	Patient.findById(id, callback);
 }
 
+// Get Patients By Name
+  
 // Add Patient
 module.exports.addPatient = (patient, callback) => {
 	Patient.create(patient, callback);
@@ -74,3 +85,6 @@ module.exports.removePatient = (id, callback) => {
 	var query = {_id: id};
 	Patient.remove(query, callback);
 }
+
+
+

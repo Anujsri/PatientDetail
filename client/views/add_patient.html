@@ -11,45 +11,66 @@
     
       
       
-      <form ng-submit="addPatient()">
+      <form ng-submit="addPatient()" name="addForm">
          
         
         <div class="form-group">
           <label>FirstName</label>
-          <input type="text" class="form-control" ng-model="patient.firstname" placeholder="FirstName" required>
+          <input type="text" class="form-control" ng-model="patient.firstname" placeholder="FirstName" name="firstname" ng-required="true">
+          <div ng-show="addForm.firstname.$touched && addForm.firstname.$invalid">
+            <small style="color: red;display: block;text-align: center;">Please Enter Firstname</small>
+          </div>
         </div>
         <div class="form-group">
           <label>LastName</label>
-          <input type="text" class="form-control" ng-model="patient.lastname" placeholder="LastName" required>
+          <input type="text" class="form-control" ng-model="patient.lastname" placeholder="LastName" ng-required="true" name="lastname">
+           <div ng-show="addForm.lastname.$touched && addForm.lastname.$invalid">
+            <small style="color: red;display: block;text-align: center;">Please Enter Lastname</small>
+          </div>
         </div>
         <div class="form-group">
           <label>Gender</label>
-          <select ng-model="patient.gender" class="form-control" required>
+          <select ng-model="patient.gender" class="form-control" ng-required="true" name="gender">
             <option value="Male">Male</option>
             <option value="Female">Female</option>
           </select>
+           <div ng-show="addForm.gender.$touched && addForm.gender.$invalid">
+            <small style="color: red;display: block;text-align: center;">Please Choose Gender</small>
+          </div>
         </div>
         <div class="form-group">
           <label>Phone</label>
-          <input type="number" class="form-control" ng-model="patient.phone" placeholder="MobileNo." required ng-minlength="10" ng-maxlength="10" >
-           
+          <input type="number" class="form-control" ng-model="patient.phone" placeholder="MobileNo."  ng-minlength="10" ng-maxlength="10" ng-required="true" name="phone">
+            <div ng-show="addForm.phone.$touched && addForm.phone.$invalid">
+            <small style="color: red;display: block;text-align: center;">Please Enter 10 digit Number</small>
+          </div>
         </div>
         <div class="form-group">
           <label>Age</label>
-          <input type="number" class="form-control" ng-model="patient.age" placeholder="Age" required ng-minlength="1">
+          <input type="number" class="form-control" ng-model="patient.age" placeholder="Age" min="1" ng-required="true" name="age">
+           <div ng-show="addForm.age.$touched && addForm.age.$invalid">
+            <small style="color: red;display: block;text-align: center;">Please Enter Age/Age should not be Negative</small>
+          </div>
         </div>
         <div class="form-group">
           <label>DOB</label>
-          <input type="date" class="form-control" ng-model="patient.dob" placeholder="Date Of Birth">
+          <input type="date" class="form-control" ng-model="patient.dob" placeholder="Date Of Birth" ng-required="true" name="dob">
+           <div ng-show="addForm.dob.$touched && addForm.dob.$invalid">
+            <small style="color: red;display: block;text-align: center;">Please Enter DOB</small>
+          </div>
         </div>
         <div class="form-group">
           <label>Information</label>
-          <textarea class="form-control" ng-model="patient.information" placeholder="Information" required ></textarea>
+          <textarea class="form-control" ng-model="patient.information" placeholder="Information" ng-required="true" name="information"></textarea>
+           <div ng-show="addForm.information.$touched && addForm.information.$invalid">
+            <small style="color: red;display: block;text-align: center;">Please Enter Information</small>
+          </div>
         </div>
          
          
        
         <button type="submit" class="btn btn-primary">Submit</button>
+      
       </form>
     </div>
     <div class="col-md-2"></div>

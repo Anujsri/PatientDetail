@@ -23,3 +23,6 @@ img{
   color: #1F4788;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
 }
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched,select.ng-invalid.ng-touched{
+  border:2px solid red;
+}

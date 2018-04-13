@@ -9,6 +9,8 @@ myApp.controller('PatientsController', ['$scope', '$http', '$location', '$routeP
 		});
 	}
 
+	 
+
 	$scope.getPatient = function(){
 		var id = $routeParams.id;
 		$http.get('/api/patients/'+id).success(function(response){
