@@ -40,7 +40,7 @@
         </div>
         <div class="form-group">
           <label>Phone</label>
-          <input type="number" class="form-control" ng-model="patient.phone" placeholder="MobileNo."  ng-minlength="10" ng-maxlength="10" ng-required="true" name="phone">
+          <input type="number" class="form-control" ng-model="patient.phone" placeholder="MobileNo." min="10" max="10" ng-required="true" name="phone">
             <div ng-show="addForm.phone.$touched && addForm.phone.$invalid">
             <small style="color: red;display: block;text-align: center;">Please Enter 10 digit Number</small>
           </div>
