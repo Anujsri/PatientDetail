@@ -16,7 +16,7 @@ We can manage the record of patients.
 #### Installation Guide for Linux:https://docs.mongodb.com/v3.0/administration/install-on-linux/ ####
 #### or go through this link https://www.youtube.com/watch?v=pWbMrx5rVBE&t=529s ####
 
-Check whether mongodb has been installed or not open your cmd in administrative mode and run 
+Check whether mongodb has been installed or not open your comd in administrative mode and run 
 
 ```sh
 $ net start MongoDB

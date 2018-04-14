@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
@@ -70,5 +72,7 @@ app.delete('/api/patients/:_id', (req, res) => {
 	});
 });
 
-app.listen(3000);
-console.log('Running on port 3000...');
+http.listen(process.env.PORT || 3000,function(){
+	console.log('listening on', http.address().port);
+});
+
