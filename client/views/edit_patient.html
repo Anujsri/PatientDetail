@@ -42,11 +42,19 @@
           </div>
         </div>
         <div class="form-group">
-          <label>MobilleNo.</label>
-          <input type="number" class="form-control" ng-model="patient.phone" placeholder="MobilleNo" ng-required="true" name="phone" min="10" max="10">
-          <div ng-show="editForm.phone.$touched && editForm.phone.$invalid">
-            <small style="color: red;display: block;text-align: center;">Please Enter 10 digit Number</small>
-          </div>
+          <label for="inputPhone" >Phone</label>
+          <input type="number" class="form-control" ng-model="patient.phone" placeholder="MobileNo." ng-minlength="10" ng-maxlength="10" ng-required="true" name="phone">
+            <span class="help-block" 
+                  ng-show="addForm.phone.$error.required || 
+                           addForm.phone.$error.number">
+                           Valid phone number is required
+            </span>
+            <span class="help-block" 
+                  ng-show="((addForm.phone.$error.minlength ||
+                           addForm.phone.$error.maxlength) && 
+                           addForm.phone.$dirty) ">
+                           phone number should be 10 digits
+            </span>
         </div>
         <div class="form-group">
           <label>DOB</label>
