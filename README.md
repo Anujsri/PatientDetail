@@ -34,6 +34,13 @@ $ npm install express
 ```sh
 $ npm install angular
 ```
+```sh
+$ npm install -g socket.io
+```
+
+```sh
+$ npm install supervisor -g
+```
 
 ```sh
 $ npm install body-parser
