@@ -21,7 +21,8 @@ Check whether mongodb has been installed or not open your comd in administrative
 ```sh
 $ net start MongoDB
 ```
-
+### change localhost to mLab MongoDB databse
+replace mongodb://localhost/patients' with mongodb://<username>:<password>@ds251747.mlab.com:51747/patients
 ### Installation required for app
 ```sh
 $ npm install
