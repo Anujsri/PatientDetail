@@ -22,8 +22,7 @@ const patientSchema = mongoose.Schema({
  
 	 	 	 
 	phone:{
-		type: Number,
-		required: true
+		type: Number
 	},
 	dob:{
 		type: Date,
